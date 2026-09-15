@@ -1,8 +1,14 @@
 # 💍 Hướng dẫn hoàn thiện thiệp cưới online
 
-Thư mục này là toàn bộ website của bạn. Chỉ 2 thứ quan trọng:
+Có 2 thiệp riêng, mỗi thiệp là 1 thư mục tự chứa (index.html + images/ + nhac.mp3):
+- `nha-gai/` — Lễ Vu Quy 26/09 → https://v.haivan.website (S3 bucket `hai-van`)
+- `nha-trai/` — Lễ Thành Hôn 29/09 → https://h.haivan.website (S3 bucket `hai-van-nhatrai`)
+
+Trong mỗi thư mục:
 - `index.html` — trang thiệp (mở bằng trình duyệt để xem)
 - `images/` — chứa ảnh (anh-01 → anh-11) và sẽ chứa QR chuyển khoản
+
+Form lời chúc đã gắn Google Sheet (WISH_URL trong `<script>` cuối file) — cả 2 thiệp ghi chung 1 Sheet.
 
 ---
 
