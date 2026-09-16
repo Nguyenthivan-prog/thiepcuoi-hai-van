@@ -400,7 +400,6 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
       <div class="tl-item"><div class="tl-time">09:00 – 10:00</div><h4>Lễ ăn hỏi</h4></div>
       <div class="tl-item"><div class="tl-time">10:00 – 11:00</div><h4>Đón khách &amp; Check-in</h4></div>
       <div class="tl-item"><div class="tl-time">11:00 – 12:30</div><h4>Khai tiệc</h4></div>
-      <div class="tl-item"><div class="tl-time">13:00</div><h4>Bế mạc</h4></div>
     </div>
   </div>
 </section>
@@ -455,7 +454,7 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
             <label>Bạn là khách của</label>
             <select name="khach_cua">
               <option>Chú rể (Hải)</option>
-              <option>Cô dâu (Vân)</option>
+              <option selected>Cô dâu (Vân)</option>
               <option>Cả hai</option>
             </select>
           </div>
@@ -481,7 +480,6 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
   <p>Cảm ơn bạn đã dành thời gian chung vui cùng chúng mình ❤</p>
   <div class="script" style="font-size:30px;margin-top:14px">Mạnh Hải &amp; Nguyễn Vân</div>
   <p style="margin-top:22px;font-size:12px;opacity:.6">26.09.2026</p>
-  <p style="margin-top:10px;font-size:10px;opacity:.4">Nhạc: “Bittersweet” — Kevin MacLeod (incompetech.com) · CC BY 3.0</p>
 </footer>
 
 <!-- ============ LIGHTBOX ============ -->
@@ -534,7 +532,7 @@ openBtn.addEventListener('click',()=>{
 
 /* ---- Gửi lời chúc → Google Sheet ---- */
 /* ===== DÁN link Web App Google Apps Script vào đây ===== */
-const WISH_URL='https://script.google.com/macros/s/AKfycbwN0pZ2UEXhWe4ktMsUizLw0Ui4pOsWKzEcmH66d31fJ8ef229nWAkyMb7sXx7oDvH_/exec';
+const WISH_URL='https://script.google.com/macros/s/AKfycbxASYexnjo41ivFzAdQiPbKX4Wq9NRfOITFV_fXNOgPsvt5yatddGP04Wn7mGEo9kaL/exec';
 const wishForm=document.getElementById('wish-form'),
       wishThanks=document.getElementById('wc-thanks'),
       wishSubmit=document.getElementById('wish-submit');
@@ -546,7 +544,8 @@ wishForm.addEventListener('submit',e=>{
     ten:wishForm.ten.value.trim(),
     khach_cua:wishForm.khach_cua.value,
     loi_chuc:wishForm.loi_chuc.value.trim(),
-    thoi_gian:new Date().toLocaleString('vi-VN')
+    thoi_gian:new Date().toLocaleString('vi-VN'),
+    nguon:'nha-gai'
   };
   fetch(WISH_URL,{method:'POST',mode:'no-cors',
     headers:{'Content-Type':'text/plain;charset=utf-8'},

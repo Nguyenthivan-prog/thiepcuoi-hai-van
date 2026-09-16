@@ -453,7 +453,7 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
           <div class="field">
             <label>Bạn là khách của</label>
             <select name="khach_cua">
-              <option>Chú rể (Hải)</option>
+              <option selected>Chú rể (Hải)</option>
               <option>Cô dâu (Vân)</option>
               <option>Cả hai</option>
             </select>
@@ -532,7 +532,7 @@ openBtn.addEventListener('click',()=>{
 
 /* ---- Gửi lời chúc → Google Sheet ---- */
 /* ===== DÁN link Web App Google Apps Script vào đây ===== */
-const WISH_URL='https://script.google.com/macros/s/AKfycbwN0pZ2UEXhWe4ktMsUizLw0Ui4pOsWKzEcmH66d31fJ8ef229nWAkyMb7sXx7oDvH_/exec';
+const WISH_URL='https://script.google.com/macros/s/AKfycbxASYexnjo41ivFzAdQiPbKX4Wq9NRfOITFV_fXNOgPsvt5yatddGP04Wn7mGEo9kaL/exec';
 const wishForm=document.getElementById('wish-form'),
       wishThanks=document.getElementById('wc-thanks'),
       wishSubmit=document.getElementById('wish-submit');
@@ -544,7 +544,8 @@ wishForm.addEventListener('submit',e=>{
     ten:wishForm.ten.value.trim(),
     khach_cua:wishForm.khach_cua.value,
     loi_chuc:wishForm.loi_chuc.value.trim(),
-    thoi_gian:new Date().toLocaleString('vi-VN')
+    thoi_gian:new Date().toLocaleString('vi-VN'),
+    nguon:'nha-trai'
   };
   fetch(WISH_URL,{method:'POST',mode:'no-cors',
     headers:{'Content-Type':'text/plain;charset=utf-8'},
