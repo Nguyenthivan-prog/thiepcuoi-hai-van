@@ -474,6 +474,56 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
   </div>
 </section>
 
+<!-- ============ KHOẢNH KHẮC: ĐÀ NẴNG ============ -->
+<section class="center">
+  <div class="wrap reveal">
+    <div class="eyebrow">Khoảnh khắc</div>
+    <h2 class="sec-title">Đà Nẵng — Thành phố kỷ niệm</h2>
+    <div class="divider"></div>
+    <p style="max-width:540px;margin:0 auto 4px;color:var(--green);font-style:italic">
+      Chúng mình chọn Đà Nẵng, chọn đèo Hải Vân để chụp ảnh vì đây là thành phố đầy kỷ niệm của 2 đứa.
+    </p>
+    <div class="gallery" id="gallery-danang" style="margin-top:22px">
+      <img src="images/dn-01.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-02.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-03.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-04.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-05.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-06.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-07.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-08.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-09.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-10.jpg" alt="Đà Nẵng" loading="lazy">
+      <img src="images/dn-11.jpg" alt="Đà Nẵng" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ KHOẢNH KHẮC: HÀ NỘI (ĐH DƯỢC) ============ -->
+<section class="center" style="background:var(--cream)">
+  <div class="wrap reveal">
+    <div class="eyebrow">Khoảnh khắc</div>
+    <h2 class="sec-title">Hà Nội — Nơi tình yêu bắt đầu</h2>
+    <div class="divider"></div>
+    <p style="max-width:540px;margin:0 auto 4px;color:var(--green);font-style:italic">
+      Hà Nội là nơi chứng kiến tình yêu của tụi mình.
+    </p>
+    <div class="gallery" id="gallery-hanoi" style="margin-top:22px">
+      <img src="images/dh-01.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-02.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-03.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-04.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-05.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-06.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-07.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-08.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-09.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-10.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-11.jpg" alt="Hà Nội" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="thanks">Thank You</div>
@@ -503,10 +553,12 @@ tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ---- Album lightbox ---- */
+/* ---- Album lightbox (áp cho mọi .gallery) ---- */
 const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img');
-document.getElementById('gallery').addEventListener('click',e=>{
-  if(e.target.tagName==='IMG'){lbImg.src=e.target.src;lb.classList.add('open');}
+document.querySelectorAll('.gallery').forEach(g=>{
+  g.addEventListener('click',e=>{
+    if(e.target.tagName==='IMG'){lbImg.src=e.target.src;lb.classList.add('open');}
+  });
 });
 lb.addEventListener('click',()=>lb.classList.remove('open'));
 
