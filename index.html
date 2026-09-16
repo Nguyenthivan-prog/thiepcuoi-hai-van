@@ -159,6 +159,8 @@ section{padding:70px 22px}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .gallery img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;cursor:pointer;transition:transform .4s,filter .4s}
 .gallery img:hover{transform:scale(1.03);filter:brightness(1.05)}
+/* Ảnh ngang: hiển thị tràn cả hàng, không cắt dọc */
+.gallery img.wide{grid-column:1 / -1;aspect-ratio:auto;height:auto;object-fit:contain}
 @media(max-width:520px){.gallery{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- Lightbox ---------- */
@@ -509,11 +511,11 @@ footer .social a{color:#eaf0ea;text-decoration:none;margin:0 10px;font-size:14px
     </p>
     <div class="gallery" id="gallery-hanoi" style="margin-top:22px">
       <img src="images/dh-01.jpg" alt="Hà Nội" loading="lazy">
-      <img src="images/dh-02.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-02.jpg" alt="Hà Nội" loading="lazy" class="wide">
       <img src="images/dh-03.jpg" alt="Hà Nội" loading="lazy">
       <img src="images/dh-04.jpg" alt="Hà Nội" loading="lazy">
       <img src="images/dh-05.jpg" alt="Hà Nội" loading="lazy">
-      <img src="images/dh-06.jpg" alt="Hà Nội" loading="lazy">
+      <img src="images/dh-06.jpg" alt="Hà Nội" loading="lazy" class="wide">
       <img src="images/dh-07.jpg" alt="Hà Nội" loading="lazy">
       <img src="images/dh-08.jpg" alt="Hà Nội" loading="lazy">
       <img src="images/dh-09.jpg" alt="Hà Nội" loading="lazy">
